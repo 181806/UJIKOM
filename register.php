@@ -6,13 +6,20 @@
     $success = "";
 
 
-    if(isset($_POST['tombol_register'])){
-        if(register($_POST) === true){
+   if(isset($_POST['tombol_register'])){
+
+    $password = $_POST['password'];
+
+    if (strlen($password) > 7){
+         if(register($_POST) === true){
             $success = "Registrasi berhasil! Silakan klik login";
-        }else{
+        } else {
             $error = register($_POST);
         }
+    } else {
+        $error = "Password minimal 8 karakter!";
     }
+}
 ?>
 
 <!DOCTYPE html>
