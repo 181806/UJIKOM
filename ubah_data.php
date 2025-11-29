@@ -5,9 +5,7 @@
 
 
     $query = query("SELECT * FROM buku WHERE id = $id")[0];
-    // echo "<pre>";
-    // var_dump($query);
-    // echo "</pre>";
+
     $buku = $query;
 
     $kategori = [];

@@ -1,7 +1,6 @@
 <?php
     require("function.php");
 
-
     $error = "";
     $success = "";
 

@@ -1,9 +1,7 @@
 <?php
     require("function.php");
 
-
     $id = $_GET['id'];
-
 
     if(hapus_data($id) > 0){
         echo "

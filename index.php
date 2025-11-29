@@ -8,9 +8,6 @@ if( !isset($_SESSION["login"]) ) {
 
 require("function.php");
 
-//   $buku = query("SELECT buku.*, kategori.nama_kategori 
-//                 FROM buku
-//                 JOIN kategori ON buku.id_kategori = kategori.id_kategori");
 
     $jumlahDataPerHalaman = 4;
     $jumlahData = count(query("SELECT * FROM buku"));
