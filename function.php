@@ -145,14 +145,16 @@ function search_data($keyword){
     global $conn;
 
 
-    $query = "SELECT * FROM mahasiswa
-              WHERE
-              judul LIKE '%$keyword%' OR
-              penulis LIKE '%$keyword%' OR
-              penerbit LIKE '%$keyword%' OR
-              tahun_terbit LIKE '%$keyword%' OR
-              nama_kategori LIKE '%$keyword%' OR
-              tanggal_inpput LIKE '%$keyword'
+    $query = "SELECT buku.*, kategori.nama_kategori 
+               FROM buku
+               JOIN kategori ON buku.id_kategori = kategori.id_kategori
+               WHERE
+              buku.judul LIKE '%$keyword%' OR
+              buku.penulis LIKE '%$keyword%' OR
+              buku.penerbit LIKE '%$keyword%' OR
+              buku.tahun_terbit LIKE '%$keyword%' OR
+              kategori.nama_kategori LIKE '%$keyword%' OR
+              buku.tanggal_input LIKE '%$keyword'
             ";
     return query($query);
 }

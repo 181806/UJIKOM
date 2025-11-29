@@ -19,10 +19,8 @@ require("function.php");
     $buku = query("SELECT buku.*, kategori.nama_kategori 
                FROM buku
                JOIN kategori ON buku.id_kategori = kategori.id_kategori
+               ORDER BY tanggal_input DESC
                LIMIT $awalData, $jumlahDataPerHalaman");
-            
-
-
 
        
     if(isset($_POST['tombol_search'])){
